@@ -1,0 +1,27 @@
+%br
+.navbar
+  .navbar-inner
+    .container
+      %a.brand{href: root_path} Menway - Intérimaires
+      %ul.nav
+        %li.active
+          %a{href: root_path} Accueil
+        %li.dropdown
+          %a.dropdown-toggle{href: "#", "data-toggle" => "dropdown"} 
+            Données
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: "#"} Ajouter des intérimaires
+            %li
+              %a{href: "#"} Importer un fichier Excel
+      %ul.nav.pull-right
+        %li.dropdown
+          %a.dropdown-toggle{href: "#", "data-toggle" => "dropdown"} 
+            Caroline VAST
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: "#"} Mon compte
+            %li
+              %a{href: "#"} Déconnexion
