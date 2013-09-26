@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'erb2haml'
 
-
+gem 'rails-i18n'
 gem 'devise'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

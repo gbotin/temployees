@@ -4,59 +4,72 @@
 =render 'shared/search'
 
 #employees
-  %table.table.table-striped.table-hover.table-bordered
+  %table.table.table-hover.table-bordered
     %thead
       %tr
-        %th
+        %th.span1.sortable
           \#
-          %i.icon-chevron-down
-        %th 
+          %i.icon-chevron-down.pull-right
+        %th.span3.sortable
           Nom
-          %i.icon-chevron-up
-        %th Qualifications
-        %th Niveau d'expérience
-        %th
-          %a{href: "#"}
+          %i.icon-chevron-down.pull-right
+        %th.span5 Qualifications
+        %th.span1 Expérience
+        %th.span1.sortable
+          Status
+          %i.icon-chevron-down.pull-right
+        %th.span1
+          %a.pull-right{href: "#"}
             %i.icon-resize-small
     %tbody
-      -5.times do 
+      -10.times do |i|
         %tr.small
           %td #
-          %td Nom Prénom
+          %td Geoffrey BOTIN
           %td Qualification 1, Qualification 2, Qualification 3...
           %td +5 ans
           %td
-            %a{href: "#"}
+            %span.label.label-success{'data-placement' => 'top', 'data-trigger' => 'hover', 'data-title' => 'Dernière mise à jour', 'data-content' => "#{l Time.now, :format => :short} (#{time_ago_in_words(Time.now - 30.days)})"} Disponible
+          %td
+            %a.pull-right{href: "#"}
               %i.icon-resize-full
         %tr.expanded.hide
-          %td
-          %td{colspan: 2}
+          %td #
+          %td{colspan: 5}
             .row-fluid
-              
-              .span8
+
+              .span5
+
+
                 %h5 Contact
                 %ul
                   %li 
                     %i.icon-user
-                    Nom Prénom
+                    Geoffrey BOTIN
                   %li 
                     %i.icon-bullhorn
-                    00 00 00 00 00
+                    06 32 35 34 80
                   %li 
                     %i.icon-envelope
                     geoffrey.botin@gmail.com
-                  %li 
-                    %i.icon-home
-                    165 Avenue de Bretagne, Euratechnologies, Lille - 59000
-                  %li
-                    %i.icon-road
-                    Transports en commun
+                %hr
+                
+                
+                .btn-group.pull-right{"data-toggle" => "buttons-radio"}
+                  %button.btn.btn-mini.active
+                    %i.icon-ok
+                  %button.btn.btn-mini
+                    %i.icon-ban-circle
+                  %button.btn.btn-mini
+                    %i.icon-question-sign
+                %h5 Disponibilité
+                
+                %p
+                  Dernière actualisation : #{l Time.now, :format => :short}
+                %hr
 
 
-            %br
-
-            .row-fluid
-              .span6
+                
                 %h5 Qualifications
                 %ul
                   %li
@@ -74,8 +87,9 @@
                   %li 
                     %i.icon-tag
                     Autre
+                %hr
 
-              .span6
+
                 %h5 Entreprises déléguées
                 %ul
                   %li 
@@ -90,10 +104,33 @@
                   %li 
                     %i.icon-briefcase
                     Entreprise
+                
 
-          %td{colspan: 2}
-            .span
-              Map
+          
+              .span7
+                %a.pull-right{href: "#"}
+                  %i.icon-resize-small
+                
+                %h5 Localisation
+                .thumbnail
+                  .map{id: "map-#{i}"}
+
+                %br
+
+                %h5 Mobilité
+                %ul
+                  %li 
+                    %i.icon-home
+                    165 Avenue de Bretagne, Euratechnologies, Lille - 59000
+                  %li
+                    %i.icon-road
+                    Transports en commun
+
+
+            .form-actions
+              .pull-right
+                %a.btn.btn-primary{href: '#'} Éditer
+                %a.btn.btn-danger{href: '#'} Supprimer
 
 
 
@@ -101,16 +138,3 @@
 
   =render "employees/paginate"
 
-
-
-  / -        Nom/Prénom
-  / -        Num de téléphone
-  / -        Mail
-  / -        Qualification principale
-  / -        Qualification secondaire
-  / -        Qualification tertiaire
-  / -        Qualification 4 (loul)
-  / -        Situation géographique
-  / -        Mobilité
-  / -        Niveau d’expérience
-  / -        Entreprises déléguées
