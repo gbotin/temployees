@@ -3,52 +3,114 @@
 
 =render 'shared/search'
 
-%table.table.table-striped.table-hover
-  %thead
-    %tr
-      %th
-        \#
-        %i.icon-chevron-down
-      %th 
-        Nom
-        %i.icon-chevron-up
-      %th Prénom
-      %th Tél
-      %th Email
-      %th Qualifications
-      %th Mobilité
-      %th Localisation
-      %th Niveau d'expérience
-      %th Entreprises déléguées
-  %tbody
-    -5.times do 
+#employees
+  %table.table.table-striped.table-hover.table-bordered
+    %thead
       %tr
-        %td #
-        %td Nom
-        %td Prénom
-        %td Tél
-        %td Email
-        %td Qualifications
-        %td Mobilité
-        %td Localisation
-        %td Niveau d'expérience
-        %td Entreprises déléguées
+        %th
+          \#
+          %i.icon-chevron-down
+        %th 
+          Nom
+          %i.icon-chevron-up
+        %th Qualifications
+        %th Niveau d'expérience
+        %th
+          %a{href: "#"}
+            %i.icon-resize-small
+    %tbody
+      -5.times do 
+        %tr.small
+          %td #
+          %td Nom Prénom
+          %td Qualification 1, Qualification 2, Qualification 3...
+          %td +5 ans
+          %td
+            %a{href: "#"}
+              %i.icon-resize-full
+        %tr.expanded.hide
+          %td
+          %td{colspan: 2}
+            .row-fluid
+              
+              .span8
+                %h5 Contact
+                %ul
+                  %li 
+                    %i.icon-user
+                    Nom Prénom
+                  %li 
+                    %i.icon-bullhorn
+                    00 00 00 00 00
+                  %li 
+                    %i.icon-envelope
+                    geoffrey.botin@gmail.com
+                  %li 
+                    %i.icon-home
+                    165 Avenue de Bretagne, Euratechnologies, Lille - 59000
+                  %li
+                    %i.icon-road
+                    Transports en commun
 
 
-%br
+            %br
 
-=render "employees/paginate"
+            .row-fluid
+              .span6
+                %h5 Qualifications
+                %ul
+                  %li
+                    %i.icon-cog
+                    +5 ans d'expérience
+                  %li 
+                    %i.icon-tag
+                    Qualification principale
+                  %li 
+                    %i.icon-tag
+                    Qualification secondaire
+                  %li 
+                    %i.icon-tag
+                    Qualification tertiaire
+                  %li 
+                    %i.icon-tag
+                    Autre
+
+              .span6
+                %h5 Entreprises déléguées
+                %ul
+                  %li 
+                    %i.icon-briefcase
+                    Entreprise
+                  %li 
+                    %i.icon-briefcase
+                    Entreprise
+                  %li 
+                    %i.icon-briefcase
+                    Entreprise
+                  %li 
+                    %i.icon-briefcase
+                    Entreprise
+
+          %td{colspan: 2}
+            .span
+              Map
 
 
 
-/ -        Nom/Prénom
-/ -        Num de téléphone
-/ -        Mail
-/ -        Qualification principale
-/ -        Qualification secondaire
-/ -        Qualification tertiaire
-/ -        Qualification 4 (loul)
-/ -        Situation géographique
-/ -        Mobilité
-/ -        Niveau d’expérience
-/ -        Entreprises déléguées
+  %br
+
+  =render "employees/paginate"
+
+
+
+  / -        Nom/Prénom
+  / -        Num de téléphone
+  / -        Mail
+  / -        Qualification principale
+  / -        Qualification secondaire
+  / -        Qualification tertiaire
+  / -        Qualification 4 (loul)
+  / -        Situation géographique
+  / -        Mobilité
+  / -        Niveau d’expérience
+  / -        Entreprises déléguées

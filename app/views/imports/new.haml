@@ -1,0 +1,14 @@
+= form_for @import, :html => {:class => 'form-horizontal'} do |f|
+  %fieldset
+    %legend Importer un fichier Excel
+    .control-group
+      = f.label :file, :class => 'control-label'
+      .controls
+        .input-append
+          = f.file_field :file, :class => 'hide'
+          = text_field_tag 'file_text', nil, readonly: true
+          %a.btn#browse Parcourir...
+    .control-group
+      .controls
+        = f.submit "Envoyer", :class => 'btn'
+  

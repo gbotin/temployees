@@ -14,14 +14,14 @@
             %li
               %a{href: "#"} Ajouter des intérimaires
             %li
-              %a{href: "#"} Importer un fichier Excel
+              %a{href: new_import_path} Importer un fichier Excel
       %ul.nav.pull-right
         %li.dropdown
           %a.dropdown-toggle{href: "#", "data-toggle" => "dropdown"} 
-            Caroline VAST
+            =current_user.email
             %b.caret
           %ul.dropdown-menu
             %li
               %a{href: "#"} Mon compte
             %li
-              %a{href: "#"} Déconnexion
+              =link_to "Déconnexion", destroy_user_session_path, method: :delete 

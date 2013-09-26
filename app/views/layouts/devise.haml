@@ -8,5 +8,14 @@
   %body
     .container
       .row
-        =render 'shared/header'
-        =yield
+        .span12
+
+          %br
+          .navbar
+            .navbar-inner
+              .container
+                %a.brand{href: root_path} Menway - Intérimaires
+
+          .row
+            .span6.offset3
+              =yield

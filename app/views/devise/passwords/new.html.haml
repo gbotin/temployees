@@ -1,0 +1,19 @@
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :class => 'form-horizontal'}) do |f|
+  = devise_error_messages!
+
+  %fieldset
+    %legend Mot de passe oublié ?
+
+    .control-group
+      = f.label :email, :class => 'control-label'
+      .controls
+        = f.email_field :email, :autofocus => true
+        
+    .control-group
+      .controls
+        = render "devise/shared/links"
+        %br
+        = f.submit "Envoyer les instructions de réinitialisation", :class => 'btn'
+
+
+

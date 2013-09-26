@@ -3,25 +3,24 @@
     %legend Recherche
     
     .row
-      .controls.form-inline.span7
+      .controls.form-inline.span
         %input.input-medium{type: "text", placeholder: "Nom"}
         %input.input-medium{type: "text", placeholder: "Qualifications"}
         
-        %select.input-medium
+        %select.input-large
           %option{selected: true} Mobilité
           %option Transports en commun
           %option Deux-roues motorisé
           %option Permis
           %option Permis et Véhicule
       
-      .controls.form-inline.span5
-        .pull-right
-          %label A
-          .input-append
-            %input.input-medium.span1{type: "number", min: 0, value: 0}
-            .add-on Km
-          %label De
-          %input.input-medium.span2{type: "text", placeholder: "Localisation"}
-          %button.btn{type: "submit"} Search
+      .controls.form-inline.pull-right
+        %label A
+        .input-append
+          %input.input-medium.span1{type: "number", min: 0, value: 0}
+          .add-on Km
+        %label De
+        %input.input-medium.span2{type: "text", placeholder: "Localisation"}
+        %button.btn{type: "submit"} Search
 
 %br
