@@ -2,8 +2,6 @@ $(document).ready ->
 
   maps = []
 
-  $('.label').popover()
-
   $(document).on 'click', "#employees a > i.icon-resize-full", ->
     hideAll()
     $tr = $(this).closest('tr.small').addClass('hide')
@@ -29,6 +27,9 @@ $(document).ready ->
       map = new google.maps.Map(document.getElementById($(this).attr('id')), mapOptions)
       maps.push(map)
 
-  initialize()
+  initialize()  
+  $('.label').popover()
 
-  $(window).bind('page:change', initialize)
+  $(window).bind 'page:change', ->
+    initialize()  
+    $('.label').popover()
