@@ -2,20 +2,20 @@ $(document).ready ->
 
   maps = []
 
-  $(document).on 'click', "#employees a > i.icon-resize-full", ->
+  $(document).on 'click', "#employees a > .glyphicon-resize-full", ->
     hideAll()
-    $tr = $(this).closest('tr.small').addClass('hide')
+    $tr = $(this).closest('tr.collapsed').addClass('hide')
     $tr.next('tr.expanded').removeClass('hide')
     $.each maps, (i, map) ->
       google.maps.event.trigger(map, "resize");
     return false
 
-  $(document).on 'click', "#employees a > i.icon-resize-small", ->
+  $(document).on 'click', "#employees a > .glyphicon-resize-small", ->
     hideAll()
     return false
 
   hideAll = ->
-    $("#employees tr.small").removeClass('hide')
+    $("#employees tr.collapsed").removeClass('hide')
     $("#employees tr.expanded").addClass('hide')
 
   initialize = ->

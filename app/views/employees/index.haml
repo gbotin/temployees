@@ -1,140 +1,161 @@
+.row
+  .col-md-12
+    .page-header
+      %h1 Liste des intérimaires
 
-%h1 Liste des intérimaires
+    =render 'shared/search'
 
-=render 'shared/search'
-
-#employees
-  %table.table.table-hover.table-bordered
-    %thead
-      %tr
-        %th.span1.sortable
-          \#
-          %i.icon-chevron-down.pull-right
-        %th.span3.sortable
-          Nom
-          %i.icon-chevron-down.pull-right
-        %th.span5 Qualifications
-        %th.span1 Expérience
-        %th.span1.sortable
-          Status
-          %i.icon-chevron-down.pull-right
-        %th.span1
-          %a.pull-right{href: "#"}
-            %i.icon-resize-small
-    %tbody
-      -10.times do |i|
-        %tr.small
-          %td #
-          %td Geoffrey BOTIN
-          %td Qualification 1, Qualification 2, Qualification 3...
-          %td +5 ans
-          %td
-            %span.label.label-success{'data-placement' => 'top', 'data-trigger' => 'hover', 'data-title' => 'Dernière mise à jour', 'data-content' => "#{l Time.now, :format => :short} (#{time_ago_in_words(Time.now - 30.days)})"} Disponible
-          %td
-            %a.pull-right{href: "#"}
-              %i.icon-resize-full
-        %tr.expanded.hide
-          %td #
-          %td{colspan: 5}
-            .row-fluid
-
-              .span5
-
-
-                %h5 Contact
-                %ul
-                  %li 
-                    %i.icon-user
-                    Geoffrey BOTIN
-                  %li 
-                    %i.icon-bullhorn
-                    06 32 35 34 80
-                  %li 
-                    %i.icon-envelope
-                    geoffrey.botin@gmail.com
-                %hr
-                
-                
-                .btn-group.pull-right{"data-toggle" => "buttons-radio"}
-                  %button.btn.btn-mini.active
-                    %i.icon-ok
-                  %button.btn.btn-mini
-                    %i.icon-ban-circle
-                  %button.btn.btn-mini
-                    %i.icon-question-sign
-                %h5 Disponibilité
-                
-                %p
-                  Dernière actualisation : #{l Time.now, :format => :short}
-                %hr
-
-
-                
-                %h5 Qualifications
-                %ul
-                  %li
-                    %i.icon-cog
-                    +5 ans d'expérience
-                  %li 
-                    %i.icon-tag
-                    Qualification principale
-                  %li 
-                    %i.icon-tag
-                    Qualification secondaire
-                  %li 
-                    %i.icon-tag
-                    Qualification tertiaire
-                  %li 
-                    %i.icon-tag
-                    Autre
-                %hr
-
-
-                %h5 Entreprises déléguées
-                %ul
-                  %li 
-                    %i.icon-briefcase
-                    Entreprise
-                  %li 
-                    %i.icon-briefcase
-                    Entreprise
-                  %li 
-                    %i.icon-briefcase
-                    Entreprise
-                  %li 
-                    %i.icon-briefcase
-                    Entreprise
-                
-
-          
-              .span7
+    #employees
+      %table.table.table-hover.table-bordered
+        %thead
+          %tr
+            %th.col-md-1.sortable
+              \#
+              %a{href: "#{}"}
+                %span.glyphicon.glyphicon-chevron-down.pull-right
+            %th.col-md-3.sortable
+              Nom
+              %a{href: "#{}"}
+                %span.glyphicon.glyphicon-chevron-down.pull-right
+            %th.col-md-5 Qualifications
+            %th.col-md-1 Expérience
+            %th.col-md-1.sortable
+              Status
+              %a{href: "#{}"}
+                %span.glyphicon.glyphicon-chevron-down.pull-right
+            %th.col-md-1
+              %a.pull-right{href: "#"}
+                %span.glyphicon.glyphicon-resize-small
+        %tbody
+          -10.times do |i|
+            %tr.collapsed
+              %td #{i}#
+              %td Geoffrey BOTIN
+              %td Qualification 1, Qualification 2, Qualification 3...
+              %td +5 ans
+              %td.center
+                %span.label.label-success{'data-placement' => 'top', 'data-trigger' => 'hover', 'data-title' => '<span class="glyphicon glyphicon-refresh pull-right"></span> Dernière mise à jour', 'data-content' => "#{l Time.now, :format => :short} (#{time_ago_in_words(Time.now - 30.days)})", 'data-html' => 'true'} Disponible
+              %td
                 %a.pull-right{href: "#"}
-                  %i.icon-resize-small
-                
-                %h5 Localisation
-                .thumbnail
-                  .map{id: "map-#{i}"}
+                  %span.glyphicon.glyphicon-resize-full
+            %tr.expanded.hide
+              %td #
+              %td{colspan: 5}
+                .row-fluid
+                  .col-md-5
+                    %h4 Contact
+                    %ul
+                      %li 
+                        %span.glyphicon.glyphicon-user
+                        Geoffrey BOTIN
+                      %li 
+                        %span.glyphicon.glyphicon-earphone
+                        06 32 35 34 80
+                      %li 
+                        %span.glyphicon.glyphicon-envelope
+                        geoffrey.botin@gmail.com
+                    %hr
+                    
+                    
+                    .btn-group.pull-right{"data-toggle" => "buttons"}
+                      
+                      %label.btn-default.btn.btn-xs.active
+                        %input{:type => 'radio', :name => 'radio', :id => 'radio'}
+                          %span.glyphicon.glyphicon-ok
 
-                %br
+                      %label.btn-default.btn.btn-xs
+                        %input{:type => 'radio', :name => 'radio', :id => 'radio'}
+                          %span.glyphicon.glyphicon-ban-circle
 
-                %h5 Mobilité
-                %ul
-                  %li 
-                    %i.icon-home
-                    165 Avenue de Bretagne, Euratechnologies, Lille - 59000
-                  %li
-                    %i.icon-road
-                    Transports en commun
+                      %label.btn-default.btn.btn-xs
+                        %input{:type => 'radio', :name => 'radio', :id => 'radio'}
+                          %span.glyphicon.glyphicon-question-sign
 
-
-            .form-actions
-              .pull-right
-                %a.btn.btn-primary{href: '#'} Éditer
-                %a.btn.btn-danger{href: '#'} Supprimer
-
+                    %h4 Disponibilité
+                    
+                    %ul
+                      %li
+                        %span.glyphicon.glyphicon-calendar
+                        Dernière actualisation : #{l Time.now, :format => :short}
+                    %hr
 
 
-  %br
+                    
+                    %h4 Qualifications
+                    %ul
+                      %li
+                        %span.glyphicon.glyphicon-cog
+                        +5 ans d'expérience
+                      %li 
+                        %span.glyphicon.glyphicon-tag
+                        Qualification principale
+                      %li 
+                        %span.glyphicon.glyphicon-tag
+                        Qualification secondaire
+                      %li 
+                        %span.glyphicon.glyphicon-tag
+                        Qualification tertiaire
+                      %li 
+                        %span.glyphicon.glyphicon-tag
+                        Autre
+                    %hr
 
-  =render "employees/paginate"
+
+                    %h4 Entreprises déléguées
+                    %ul
+                      %li 
+                        %span.glyphicon.glyphicon-briefcase
+                        Entreprise
+                      %li 
+                        %span.glyphicon.glyphicon-briefcase
+                        Entreprise
+                      %li 
+                        %span.glyphicon.glyphicon-briefcase
+                        Entreprise
+                      %li 
+                        %span.glyphicon.glyphicon-briefcase
+                        Entreprise
+                    
+
+              
+                  .col-md-7
+                    %a.tab-collapse.pull-right{href: "#"}
+                      %span.glyphicon.glyphicon-resize-small
+                    
+                    %h4 Localisation
+                    .thumbnail
+                      .map{id: "map-#{i}"}
+
+                    %br
+
+                    %h4 Mobilité
+                    %ul
+                      %li 
+                        %span.glyphicon.glyphicon-home
+                        165 Avenue de Bretagne, Euratechnologies, Lille - 59000
+                      %li
+                        %span.glyphicon.glyphicon-road
+                        Transports en commun
+
+
+                  .clearfix              
+                  
+                  .row-fluid
+                    .col-md-12
+                      .pull-right
+                        %a.btn.btn-default{href: '#'} 
+                          %span.glyphicon.glyphicon-floppy-open
+                          Éditer
+                        %a.btn.btn-default{href: '#'}
+                          %span.glyphicon.glyphicon-floppy-remove
+                          Supprimer
+                      .clearfix
+                    %br
+                   
+                  
+
+
+      %br
+
+      =render "employees/paginate"
 

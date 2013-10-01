@@ -1,52 +1,72 @@
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+
+.popover .popover-title{
+  font-weight: bold;
+  span{
+    line-height: 15px;
+  }
+}
 
 thead tr th{
-	background: #eeeeee;
+  background: #eeeeee;
 
-	&.sortable{
-		cursor: pointer;
-		&:hover{
-			background: #E7E7E7;
-		}
-	}
+  &.sortable{
+    cursor: pointer;
+    &:hover{
+      background: #E7E7E7;
+    }
+  }
+
+  span.glyphicon{
+    line-height: 20px;
+  }
 }
 
-.popover-title{
-	font-weight: bold;
-}
 
 tr.expanded{
 
-	background: whitesmoke;
+  background: whitesmoke;
 
-	ul{
-		margin-left: 0;
-		li{
-			list-style-type: none;
-		}
-	}
-	
-	h5{
-		margin-top: 0;
-	}
-	&:hover > td{
-		background: none !important;
-	}
+  ul{
+    padding-left: 0;
+    li{
+      list-style-type: none;
+    }
+  }
+  
+  h5{
+    margin-top: 0;
+  }
+  &:hover > td{
+    background: none !important;
+  }
 }
 
-tr.small .label:hover{
-	cursor: pointer;
+tr.collapsed td {
+
+  &.center{
+    text-align: center;
+  }
+
+  .label{
+    font-size: 100%;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
-	
+
+  
+
 .map{
-	height: 250px;
+  height: 250px;
 
-	img {
-	  max-width: none;
-	}
+  img {
+    max-width: none;
+  }
 }

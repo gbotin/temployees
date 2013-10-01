@@ -1,22 +1,30 @@
-= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f|
-  %fieldset
-    %legend Connexion
-    .control-group
-      = f.label :email, :class => 'control-label'
-      .controls
-        = f.email_field :email, :autofocus => true
-    .control-group
-      = f.label :password, :class => 'control-label'
-      .controls
-        = f.password_field :password
-    - if devise_mapping.rememberable?
-      .control-group
-        .controls
-          = f.label :remember_me, :class => 'checkbox' do
-            = f.check_box :remember_me
-            Se souvenir de moi
+.row
+  .col-md-6.col-md-offset-3
 
-          = render "devise/shared/links"
-          %br
-          = f.submit "Connexion", :class => 'btn'
-  
+    .panel.panel-default.panel-top
+      .panel-heading
+        %h1.panel-title Connexion
+
+      .panel-body
+        = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal', :role => 'form'}) do |f|
+          %fieldset
+            .form-group
+              = f.label :email, :class => 'control-label col-md-4'
+              .col-md-8
+                = f.email_field :email, :autofocus => true, :class => 'form-control'
+            .form-group
+              = f.label :password, :class => 'control-label col-md-4'
+              .col-md-8
+                = f.password_field :password, :class => 'form-control'
+            - if devise_mapping.rememberable?
+              .form-group
+                .col-md-8.col-md-offset-4
+                  .checkbox
+                    = f.label :remember_me do
+                      = f.check_box :remember_me
+                      Se souvenir de moi
+
+                  = render "devise/shared/links"
+                  %br
+                  = f.submit "Connexion", :class => 'btn btn-default'
+          

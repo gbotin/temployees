@@ -1,9 +1,28 @@
 /*
- *= require bootstrap
+ *= require twitter/bootstrap
  *= require_tree .
- *= require_self 
+ *= require_self
  */
 
 body{
   overflow-y: scroll;
+  padding-top: 50px;
+}
+
+#search{
+  padding-bottom: 50px;
+}
+
+form legend span{
+  margin-top: 20px;
+  display: block;
+}
+
+.panel-top{
+  margin-top: 100px;
+}
+
+a.tab-collapse{
+  position: absolute;
+  right: 0;
 }
