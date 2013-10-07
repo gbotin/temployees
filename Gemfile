@@ -26,6 +26,11 @@ gem 'erb2haml'
 gem 'rails-i18n'
 gem 'devise'
 
+gem 'rspec'
+gem 'shoulda'
+gem 'factory_girl'
+gem 'capybara'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 

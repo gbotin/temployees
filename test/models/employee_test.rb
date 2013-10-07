@@ -1,11 +1,7 @@
 require 'test_helper'
 
-class ImportTest < ActiveSupport::TestCase
+class EmployeeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-
-
-  
-  
 end
